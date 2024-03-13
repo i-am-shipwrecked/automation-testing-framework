@@ -11,14 +11,16 @@ import managers.DriverManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import utils.PageFactory;
+import utils.Waiter;
 
 import java.io.InputStream;
 import java.util.Properties;
 
 public class Steps {
     private WebDriver driver = DriverManager.getDriver();
-    PageFactory pageFactory = new PageFactory(driver);
+    private PageFactory pageFactory = new PageFactory(driver);
     private static final Logger LOGGER = LoggerConfigurator.getLogger();
+    private Waiter waiter = Waiter.getInstance();
 
     @Before
     public void setup() {
