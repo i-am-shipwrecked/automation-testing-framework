@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="TRACE">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d %p [%t] %c{1} [%L] - %m%n"/>
+        </Console>
+        <RollingFile name="RollingFile"
+                     filePattern="logs/%d{yyyy-MM-dd}-app-test-automation.log">
+            <PatternLayout pattern="%d %p [%t] %c{1} [%L] - %m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+            </Policies>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="DEBUG">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="RollingFile"/>
+        </Root>
+        <Logger name="io.netty" level="WARN"/>
+    </Loggers>
+</Configuration>

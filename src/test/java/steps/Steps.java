@@ -1,5 +1,6 @@
 package steps;
 
+import config.LoggerConfigurator;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
@@ -7,6 +8,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import managers.DriverManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import utils.PageFactory;
 
@@ -16,6 +18,7 @@ import java.util.Properties;
 public class Steps {
     private WebDriver driver = DriverManager.getDriver();
     PageFactory pageFactory = new PageFactory(driver);
+    private static final Logger LOGGER = LoggerConfigurator.getLogger();
 
     @Before
     public void setup() {
@@ -45,6 +48,7 @@ public class Steps {
         }
 
         String appUrl = properties.getProperty("app.url");
+        LOGGER.info("Test logs");
         driver.get(appUrl);
     }
 
