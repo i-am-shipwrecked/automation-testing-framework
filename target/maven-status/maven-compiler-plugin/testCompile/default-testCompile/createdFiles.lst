@@ -1,4 +1,10 @@
 runner\Runner.class
+utils\Waiter$1.class
+config\LoggerConfigurator.class
 steps\Steps.class
 managers\DriverManager.class
+utils\Waiter$Holder.class
+config\Configuration.class
+utils\Waiter.class
+config\ConfigurationManager.class
 utils\PageFactory.class
