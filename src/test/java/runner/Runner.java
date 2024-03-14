@@ -13,10 +13,14 @@ import org.junit.runner.RunWith;
         tags = "@Run",
         features = "src/test/java/features",
         glue = "steps",
-        plugin =    {
-                "pretty", "html:target/serenity-reports/serenity-html-report",
+        plugin = {
+                "pretty",
+                "config.TestRetryListener",
+                "html:target/serenity-reports/serenity-html-report",
                 "json:target/serenity-reports/SerenityTestReport.json",
-                "rerun:target/serenity-reports/rerun.txt"},
+                "rerun:target/serenity-reports/rerun.txt",
+                "rerun:target/failedScenarios.txt"
+        },
         objectFactory = PicoFactory.class
 )
 public class Runner {

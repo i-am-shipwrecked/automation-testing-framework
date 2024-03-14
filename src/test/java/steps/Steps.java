@@ -3,14 +3,18 @@ package steps;
 import config.LoggerConfigurator;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import managers.DriverManager;
 import org.apache.logging.log4j.Logger;
+import org.junit.Assert;
 import org.openqa.selenium.*;
+import pages.MainPage;
 import utils.PageFactory;
+import utils.RetryManager;
 import utils.Waiter;
 
 import java.io.InputStream;
@@ -21,6 +25,7 @@ public class Steps {
     private PageFactory pageFactory = new PageFactory(driver);
     private static final Logger LOGGER = LoggerConfigurator.getLogger();
     private Waiter waiter = Waiter.getInstance();
+    MainPage mainPage = new MainPage(driver);
 
     @Before
     public void setup() {
@@ -33,6 +38,17 @@ public class Steps {
             DriverManager.quitDriver();
         } catch (Exception e) {
             System.out.println("браузер не закрылся");
+        }
+    }
+
+    @After
+    public void retryFailedScenario(Scenario scenario) {
+        if (scenario.isFailed() && RetryManager.shouldRetry()) {
+            RetryManager.incrementRetryCount();
+            System.out.println("Retrying failed scenario: " + scenario.getName());
+            // Здесь можно реализовать логику перезапуска сценария
+        } else {
+            RetryManager.resetRetryCount();
         }
     }
 
@@ -66,5 +82,21 @@ public class Steps {
 
     @Then("Verify that your database is not broken =)")
     public void nothingHappens() {
+    }
+
+    @When("User clicks on null button")
+    public void userClicksOnNullButton() {
+        WebElement element = mainPage.getElement();
+        if (element != null) {
+            element.click();
+        } else {
+            throw new RuntimeException("The element is null, intentionally failing the test.");
+        }
+    }
+
+
+    @Then("Test should be failed and returned")
+    public void testShouldBeFailedAndReruned() {
+        Assert.assertTrue(mainPage.getElement().isDisplayed());
     }
 }

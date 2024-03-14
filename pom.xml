@@ -91,6 +91,13 @@
         <artifactId>logback-classic</artifactId>
         <version>1.4.14</version>
     </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.7.1</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -99,12 +106,7 @@
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>3.1.2</version>
                 <configuration>
-                    <includes>
-                        <include>**/*Test.java</include>
-                        <include>**/Test*.java</include>
-                        <include>**/*TestSuite.java</include>
-                        <include>**/When*.java</include>
-                    </includes>
+                    <rerunFailingTestsCount>3</rerunFailingTestsCount> <!-- Количество перезапусков упавших тестов -->
                     <systemPropertyVariables>
                         <webdriver.base.url>${webdriver.base.url}</webdriver.base.url>
                     </systemPropertyVariables>
@@ -121,6 +123,7 @@
                     </execution>
                 </executions>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>

@@ -3,6 +3,8 @@ utils\Waiter$1.class
 config\LoggerConfigurator.class
 steps\Steps.class
 managers\DriverManager.class
+pages\MainPage.class
+config\TestRetryListener.class
 utils\Waiter$Holder.class
 config\Configuration.class
 utils\Waiter.class

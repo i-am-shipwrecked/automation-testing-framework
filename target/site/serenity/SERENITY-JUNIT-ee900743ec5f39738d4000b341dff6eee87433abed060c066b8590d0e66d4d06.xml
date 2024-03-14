@@ -1,1 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="SQL injector" skipped="0" tests="1" time="6.56" timestamp="2024-03-14 03:55:37"><testcase name="SQL Injections"/></testsuite>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="1" failures="0" name="SQL injector" skipped="0" tests="2" time="12.28" timestamp="2024-03-14 07:40:21"><testcase name="SQL Injections"/><testcase name="This test should be failed"><error message="The element is null, intentionally failing the test." type="java.lang.RuntimeException">The element is null, intentionally failing the test.</error><system-err>The element is null, intentionally failing the test.&#13;
+steps.Steps.userClicksOnNullButton(Steps.java:93)&#13;
+✽.User clicks on null button(file:///C:/Users/Admin/Desktop/automation-testing-framework/src/test/java/features/test.feature:17)&#13;
+</system-err></testcase></testsuite>
