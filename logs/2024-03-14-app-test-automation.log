@@ -89,3 +89,6 @@
 2024-03-14 19:40:30,767 INFO [main] LoggerConfigurator [69] - Test logs
 2024-03-14 19:44:05,979 INFO [main] LoggerConfigurator [21] - Log4j is configured.
 2024-03-14 19:44:08,076 INFO [main] LoggerConfigurator [69] - Test logs
+2024-03-14 20:38:27,397 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-03-14 20:38:29,467 INFO [main] LoggerConfigurator [69] - Test logs
+2024-03-14 20:38:34,987 INFO [main] LoggerConfigurator [69] - Test logs

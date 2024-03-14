@@ -14,7 +14,6 @@ import org.junit.Assert;
 import org.openqa.selenium.*;
 import pages.MainPage;
 import utils.PageFactory;
-import utils.RetryManager;
 import utils.Waiter;
 
 import java.io.InputStream;
@@ -38,17 +37,6 @@ public class Steps {
             DriverManager.quitDriver();
         } catch (Exception e) {
             System.out.println("браузер не закрылся");
-        }
-    }
-
-    @After
-    public void retryFailedScenario(Scenario scenario) {
-        if (scenario.isFailed() && RetryManager.shouldRetry()) {
-            RetryManager.incrementRetryCount();
-            System.out.println("Retrying failed scenario: " + scenario.getName());
-            // Здесь можно реализовать логику перезапуска сценария
-        } else {
-            RetryManager.resetRetryCount();
         }
     }
 

@@ -97,7 +97,6 @@
             <version>7.7.1</version>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -106,7 +105,7 @@
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>3.1.2</version>
                 <configuration>
-                    <rerunFailingTestsCount>3</rerunFailingTestsCount> <!-- Количество перезапусков упавших тестов -->
+                    <rerunFailingTestsCount>3</rerunFailingTestsCount>
                     <systemPropertyVariables>
                         <webdriver.base.url>${webdriver.base.url}</webdriver.base.url>
                     </systemPropertyVariables>

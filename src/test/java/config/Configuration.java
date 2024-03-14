@@ -12,8 +12,4 @@ public class Configuration {
     public String getProperty(String key) {
         return properties.getProperty(key);
     }
-
-    public boolean getRetryFailedTests() {
-        return Boolean.parseBoolean(properties.getProperty("retryFailedTests", "true"));
-    }
 }
