@@ -1,2 +1,0 @@
-file:src/test/java/features/test.feature:15
-ting-framework/src/test/java/features/test.feature:15

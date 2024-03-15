@@ -14,7 +14,6 @@ import org.junit.runner.RunWith;
         glue = "steps",
         plugin = {
                 "pretty",
-                "config.TestRetryListener",
                 "html:target/serenity-reports/serenity-html-report",
                 "json:target/serenity-reports/SerenityTestReport.json",
                 "rerun:target/serenity-reports/rerun.txt",
