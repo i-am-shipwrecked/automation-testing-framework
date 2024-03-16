@@ -1,3 +1,8 @@
 2024-03-16 00:08:41,161 INFO [ForkJoinPool-3-worker-1] LoggerConfigurator [21] - Log4j is configured.
 2024-03-16 00:08:45,920 INFO [ForkJoinPool-3-worker-1] LoggerConfigurator [57] - Test logs
 2024-03-16 00:08:45,920 INFO [ForkJoinPool-3-worker-2] LoggerConfigurator [57] - Test logs
+2024-03-16 15:16:09,020 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-03-16 15:16:11,628 INFO [main] LoggerConfigurator [57] - Test logs
+2024-03-16 15:16:16,957 INFO [main] LoggerConfigurator [57] - Test logs
+2024-03-16 15:16:55,073 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-03-16 15:16:57,199 INFO [main] LoggerConfigurator [57] - Test logs

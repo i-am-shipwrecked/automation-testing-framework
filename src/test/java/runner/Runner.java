@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         publish = true,
         stepNotifications = true,
         tags = "@Run",
-        features = "src/test/java/features",
+        features = "src/test/resources/features",
         glue = "steps",
         plugin = {
                 "pretty",

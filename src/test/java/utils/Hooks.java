@@ -1,6 +1,4 @@
-package utils;
-import io.cucumber.java.After;
-import io.cucumber.java.Scenario;
+package utils;;
 
 public class Hooks {
 
