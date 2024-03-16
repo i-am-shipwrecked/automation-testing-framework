@@ -13,6 +13,7 @@ import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import pages.MainPage;
+import utils.EmailSender;
 import utils.PageFactory;
 import utils.Waiter;
 
@@ -32,13 +33,25 @@ public class Steps {
     }
 
     @After
-    public void tearDown() {
+    public void afterScenario(Scenario scenario) {
         try {
-            DriverManager.quitDriver();
+            if (scenario.isFailed()) {
+                String subject = "Failed Test Report";
+                String body = "Test Scenario: " + scenario.getName() + " has failed.";
+                String recipient = "idontusecocaine@gmail.com";
+                EmailSender.sendEmail(recipient, subject, body);
+            }
         } catch (Exception e) {
-            System.out.println("браузер не закрылся");
+            e.printStackTrace();
+        } finally {
+            try {
+                DriverManager.quitDriver();
+            } catch (Exception e) {
+                System.out.println("Browser did not close properly.");
+            }
         }
     }
+
 
     @Given("User is on the page, which you can insert into sql_injector.properties")
     public void userIsOnThePageWhichYouCanInsertIntoSql_injectorProperties() {
