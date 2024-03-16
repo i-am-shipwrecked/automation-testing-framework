@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8"/>
-    <title>Requirements</title>
+    <title>Features</title>
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
@@ -203,6 +203,8 @@
 
 
 
+                    > <span class="truncate-40">SQL injector</span>
+
             </span>
         </div>
         <div class="rightbg"></div>
@@ -216,11 +218,11 @@
         <li >
             <a href="index.html"><i class="bi bi-journal-check"></i> Overall Test Results</a>
         </li>
-        <li class="active">
-            <a href="#"><i class="bi bi-journal-text"></i> Requirements</a>
-        </li>
         <li >
-            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li class="active">
+            <a href="#"><i class="bi bi-chat-text"></i> Features</a>
         </li>
     </ul>
     <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated </span>
@@ -232,6 +234,26 @@
     <div id="beforetable"></div>
     <div id="results-dashboard">
         <div class="table">
+            <div class=row">
+                <div class="col-sm-12">
+                    <div>
+                        <div clas="table">
+                            <div class="row">
+
+                                    <div class="col-sm-12">
+                                        <span>
+                                            <h2><i class="bi bi-book"></i> Feature: SQL injector</h2>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="requirementNarrativeTitle">
+                                
+                            </div>
+
+                    </div>
+                </div>
 
 
                 <div class="row">
@@ -434,7 +456,51 @@
 
                                                 <h3><i class="bi bi-gear"></i> Automated Tests</h3>
 
-                                                    No automated tests were executed
+                                                    <table class="scenario-result-table table" id="scenario-results">
+                                                        <thead>
+                                                        <tr>
+                                                            <th>feature</th>
+                                                            <th class="test-name-column">Scenario</th>
+                                                            <th>Context</th>
+                                                            <th>Steps</th>
+                                                            <th>Started</th>
+                                                            <th>Total Duration</th>
+                                                            <th>Result</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                                <tr class="scenario-result UNDEFINED">
+                                                                    <td>
+                                                                            <a href="#">SQL injector</a>
+                                                                    </td>
+                                                                    <td>
+                                                                                <a href="">SQL Injections</a>
+                                                                    </td>
+                                                                    <td><span class='context-icon'></span><span style="display:none"></span>
+                                                                    </td>
+                                                                    <td>4</td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td><i class='bi bi-pause-circle undefined-icon ' title='No test has been implemented yet'></i> <span style="display:none">UNDEFINED</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result UNDEFINED">
+                                                                    <td>
+                                                                            <a href="#">SQL injector</a>
+                                                                    </td>
+                                                                    <td>
+                                                                                <a href="">This test should be failed</a>
+                                                                    </td>
+                                                                    <td><span class='context-icon'></span><span style="display:none"></span>
+                                                                    </td>
+                                                                    <td>3</td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td><i class='bi bi-pause-circle undefined-icon ' title='No test has been implemented yet'></i> <span style="display:none">UNDEFINED</span>
+                                                                    </td>
+                                                                </tr>
+                                                        </tbody>
+                                                    </table>
 
                                             </div>
                                         </div>
@@ -474,14 +540,14 @@
 
         // Options define for display value on top of bars
         const outcomeDetailsReports = [
-            { title: 'Passing Test Cases', link: "01f5288b80adbd3af52a8ed68a4a616d3164f750229f80da1ef344382d948835.html" },
-            { title: 'Pending Test Cases', link: "bde4fca42ca8baa0fe2eac76a241c84327dfe4ca903a1daa7cae83a1035d4745.html" },
-            { title: 'Ignored Test Cases', link: "c1b352893c3d69e59317fd825f20a75f987a859afe98fb4434f47dce70c48fd4.html" },
-            { title: 'Skipped Test Cases', link: "7409dbb9985b960343780b303d8028480bd55e9aebd855c90eff0a000e21ccc8.html" },
-            { title: 'Aborted Test Cases',  link: "91152e032be7fe762aa6823d6424278e2c72efeb7622a5e63c7bf5980b4fd8a0.html"},
-            { title: 'Failed Test Cases', link: "da5b0c51b332adf0ef993a9f086d6a1b51a3d800248ec6ae281212092f35bd37.html"  },
-            { title: 'Broken Test Cases', link: "c8a926210aeff57f8aa7ea799262d4b730915a909cd5ecd6a705b1fa13bc7aa8.html"    },
-            { title: 'Compromised Test Cases',  link: "02dd8f8ada4c10b8ebb5c1f309605a6f7c147adc21bcf5c55829855ba045ff03.html" },
+            { title: 'Passing Test Cases', link: "6fe7193054840083866b622f32a53bb30bda266bac13ed4184f4fdbbc064bc2d.html" },
+            { title: 'Pending Test Cases', link: "34a44bd0fba5feec9c2640b4fcf45548e92f790baf11641f7a9708566499a879.html" },
+            { title: 'Ignored Test Cases', link: "88df1d0e3cef04b2778f6bd94ddb050a9a12b602a6fd733267337fd2661296a0.html" },
+            { title: 'Skipped Test Cases', link: "a8749a476ed52b809ff206106209edb789ffbdadcdbbfe947524cc593b43e199.html" },
+            { title: 'Aborted Test Cases',  link: "9b15ccf2843be971bf67e36eef7b983e63c8effbbf9877c4089d7f5488fb22a6.html"},
+            { title: 'Failed Test Cases', link: "b595f98a7f604fb3933b2475b1c7538d9917f9f3bfdd17853f7f267c12ca1fa7.html"  },
+            { title: 'Broken Test Cases', link: "79fb7db2dd6420bdbea9b92fee9bc16c6cbae4cd21121a2fa4d3b1cb2845e191.html"    },
+            { title: 'Compromised Test Cases',  link: "86ea3570dda18ef0a0b6b17b31b1f2ac5eb0bb54664fbd7db167f007cf447fec.html" },
         ]
         const outcomeData = {
             labels: ['Passing Test Cases', 'Pending Test Cases', 'Ignored Test Cases', 'Skipped Test Cases', 'Aborted Test Cases', 'Failed Test Cases', 'Broken Test Cases', 'Compromised Test Cases','Undefined Test Cases'],
@@ -568,14 +634,14 @@
 
         // Options define for display value on top of bars
         const requirementsOutcomeDetailsReports = [
-            { title: 'Passing Test Cases', link: "01f5288b80adbd3af52a8ed68a4a616d3164f750229f80da1ef344382d948835.html" },
-            { title: 'Pending Test Cases', link: "bde4fca42ca8baa0fe2eac76a241c84327dfe4ca903a1daa7cae83a1035d4745.html" },
-            { title: 'Ignored Test Cases', link: "c1b352893c3d69e59317fd825f20a75f987a859afe98fb4434f47dce70c48fd4.html" },
-            { title: 'Skipped Test Cases', link: "7409dbb9985b960343780b303d8028480bd55e9aebd855c90eff0a000e21ccc8.html" },
-            { title: 'Aborted Test Cases',  link: "91152e032be7fe762aa6823d6424278e2c72efeb7622a5e63c7bf5980b4fd8a0.html"},
-            { title: 'Failed Test Cases', link: "da5b0c51b332adf0ef993a9f086d6a1b51a3d800248ec6ae281212092f35bd37.html"  },
-            { title: 'Broken Test Cases', link: "c8a926210aeff57f8aa7ea799262d4b730915a909cd5ecd6a705b1fa13bc7aa8.html"    },
-            { title: 'Compromised Test Cases',  link: "02dd8f8ada4c10b8ebb5c1f309605a6f7c147adc21bcf5c55829855ba045ff03.html" },
+            { title: 'Passing Test Cases', link: "6fe7193054840083866b622f32a53bb30bda266bac13ed4184f4fdbbc064bc2d.html" },
+            { title: 'Pending Test Cases', link: "34a44bd0fba5feec9c2640b4fcf45548e92f790baf11641f7a9708566499a879.html" },
+            { title: 'Ignored Test Cases', link: "88df1d0e3cef04b2778f6bd94ddb050a9a12b602a6fd733267337fd2661296a0.html" },
+            { title: 'Skipped Test Cases', link: "a8749a476ed52b809ff206106209edb789ffbdadcdbbfe947524cc593b43e199.html" },
+            { title: 'Aborted Test Cases',  link: "9b15ccf2843be971bf67e36eef7b983e63c8effbbf9877c4089d7f5488fb22a6.html"},
+            { title: 'Failed Test Cases', link: "b595f98a7f604fb3933b2475b1c7538d9917f9f3bfdd17853f7f267c12ca1fa7.html"  },
+            { title: 'Broken Test Cases', link: "79fb7db2dd6420bdbea9b92fee9bc16c6cbae4cd21121a2fa4d3b1cb2845e191.html"    },
+            { title: 'Compromised Test Cases',  link: "86ea3570dda18ef0a0b6b17b31b1f2ac5eb0bb54664fbd7db167f007cf447fec.html" },
             { title: 'Undefined Test Cases',  link: "" },
         ]
         const requirementsOutcomeData = {
@@ -665,14 +731,14 @@
         // Options define for display value on top of bars
 
         const severityDetailsReports = [
-            { title: 'Passing Scenarios', link: "01f5288b80adbd3af52a8ed68a4a616d3164f750229f80da1ef344382d948835.html" },
-            { title: 'Pending Scenarios', link: "bde4fca42ca8baa0fe2eac76a241c84327dfe4ca903a1daa7cae83a1035d4745.html" },
-            { title: 'Ignored Scenarios', link: "c1b352893c3d69e59317fd825f20a75f987a859afe98fb4434f47dce70c48fd4.html" },
-            { title: 'Skipped Scenarios', link: "7409dbb9985b960343780b303d8028480bd55e9aebd855c90eff0a000e21ccc8.html" },
-            { title: 'Aborted Scenarios',  link: "91152e032be7fe762aa6823d6424278e2c72efeb7622a5e63c7bf5980b4fd8a0.html"},
-            { title: 'Failed Scenarios', link: "da5b0c51b332adf0ef993a9f086d6a1b51a3d800248ec6ae281212092f35bd37.html"  },
-            { title: 'Broken Scenarios', link: "c8a926210aeff57f8aa7ea799262d4b730915a909cd5ecd6a705b1fa13bc7aa8.html"    },
-            { title: 'Compromised Scenarios',  link: "02dd8f8ada4c10b8ebb5c1f309605a6f7c147adc21bcf5c55829855ba045ff03.html" },
+            { title: 'Passing Scenarios', link: "6fe7193054840083866b622f32a53bb30bda266bac13ed4184f4fdbbc064bc2d.html" },
+            { title: 'Pending Scenarios', link: "34a44bd0fba5feec9c2640b4fcf45548e92f790baf11641f7a9708566499a879.html" },
+            { title: 'Ignored Scenarios', link: "88df1d0e3cef04b2778f6bd94ddb050a9a12b602a6fd733267337fd2661296a0.html" },
+            { title: 'Skipped Scenarios', link: "a8749a476ed52b809ff206106209edb789ffbdadcdbbfe947524cc593b43e199.html" },
+            { title: 'Aborted Scenarios',  link: "9b15ccf2843be971bf67e36eef7b983e63c8effbbf9877c4089d7f5488fb22a6.html"},
+            { title: 'Failed Scenarios', link: "b595f98a7f604fb3933b2475b1c7538d9917f9f3bfdd17853f7f267c12ca1fa7.html"  },
+            { title: 'Broken Scenarios', link: "79fb7db2dd6420bdbea9b92fee9bc16c6cbae4cd21121a2fa4d3b1cb2845e191.html"    },
+            { title: 'Compromised Scenarios',  link: "86ea3570dda18ef0a0b6b17b31b1f2ac5eb0bb54664fbd7db167f007cf447fec.html" },
         ]
         const severityData = {
             labels: ['Passing', 'Pending', 'Ignored', 'Skipped', 'Aborted', 'Failed', 'Broken', 'Compromised'],
@@ -743,14 +809,14 @@
 
         // Options define for display value on top of bars
         const durationDetailsReports = [
-                {title: "Under 1 second", link: "2a5b6a7be0f08df02d8ab0b4d4c68648c2695c6c7ef0658c71de4d42b1415b18.html"},
-                {title: "1 to 10 seconds", link: "6c5512236937b92cd7a296b24edb966c2bd94be46b8910f8b129a42d6150eb25.html"},
-                {title: "10 to 30 seconds", link: "34658a1663fcf042bd7acb3325affbe4e647c8acd84d0228be2f52e1381e61b9.html"},
-                {title: "30 to 60 seconds", link: "5698da923f295f46ce5ab64ced2311fc60caa4e36b32112606d3adcfdce3f60b.html"},
-                {title: "1 to 2 minutes", link: "c68fd6639ab29c4b0ac02a78bc39f4e22557bcaa40ef14c903ac0e584626edfe.html"},
-                {title: "2 to 5 minutes", link: "3ce388ea8511800032930896a3e5ba2c4f80e46f1a10b143b67009baf212c6a0.html"},
-                {title: "5 to 10 minutes", link: "376e1536bb68812a880e84ca7a0c6d104d541788793f22a36b4462a6a9aaa344.html"},
-                {title: "10 minutes or over", link: "24bba6f5cf4f06c7d46bf8990b86c4fbc1ce4ce201644ddf42661c84031e1c90.html"},
+                {title: "Under 1 second", link: "9c6a2c5fe74aa58d5042f3968f3e965ba0215c44d073875841ed4ea078afa41b.html"},
+                {title: "1 to 10 seconds", link: "aaa99b1ae302ed411b8182b1d98628855f86705005b78fcf4e8fcb17b69c03e9.html"},
+                {title: "10 to 30 seconds", link: "2cfbef0ad9aea19b4bb69eb8e094cd67ca95a7a9b7236f6f84ef85cad393dd21.html"},
+                {title: "30 to 60 seconds", link: "6baa62f4dbe88238a69442e490f3da0cc80175feb8360e84ea3d730831550acb.html"},
+                {title: "1 to 2 minutes", link: "1e8febe7886e419088b6fe8478e1b0815210adc2bcef8ec6b0d94eccda4a4f8b.html"},
+                {title: "2 to 5 minutes", link: "a96a54d38b8a6850045b680c6142ff1116a167fa49d0b31f5130bbf4f39c9fe7.html"},
+                {title: "5 to 10 minutes", link: "eb1ae19abf78c24d8d2df421f01ba32d56b621564ccda997f0f64f1870fbfcf2.html"},
+                {title: "10 minutes or over", link: "e25e4eb3cd84e1880a738a98acc44dab0b9d533b916a80205948305122304d55.html"},
         ]
         // The Severity bar chart
         const durationChartCtx = document.getElementById('durationChart');
