@@ -1,0 +1,6 @@
+2024-03-17 14:53:12,063 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-03-17 14:53:14,425 INFO [main] LoggerConfigurator [70] - Test logs
+2024-03-17 14:53:21,955 INFO [main] LoggerConfigurator [70] - Test logs
+2024-03-17 14:54:42,994 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-03-17 14:54:45,108 INFO [main] LoggerConfigurator [70] - Test logs
+2024-03-17 14:54:50,412 INFO [main] LoggerConfigurator [70] - Test logs
