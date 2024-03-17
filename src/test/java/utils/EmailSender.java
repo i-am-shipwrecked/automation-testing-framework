@@ -2,18 +2,23 @@ package utils;
 
 import javax.mail.*;
 import javax.mail.internet.*;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 public class EmailSender {
-    public static void sendEmail(String to, String subject, String body) {
-        final String username = "idontusecocaine@gmail.com";
-        final String password = "uaay guzk xaqc ukst";
 
+    public static void sendEmail(String to, String subject, String body) {
         Properties props = new Properties();
-        props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.starttls.enable", "true");
-        props.put("mail.smtp.host", "smtp.gmail.com");
-        props.put("mail.smtp.port", "587");
+        InputStream input = EmailSender.class.getClassLoader().getResourceAsStream("email-api-config.properties");
+        try {
+            props.load(input);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        final String username = props.getProperty("email.username");
+        final String password = props.getProperty("email.password");
 
         Session session = Session.getInstance(props,
                 new javax.mail.Authenticator() {
