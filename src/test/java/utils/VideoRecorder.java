@@ -12,6 +12,7 @@ import static org.monte.media.VideoFormatKeys.*;
 
 public class VideoRecorder {
     private ScreenRecorder screenRecorder;
+    private File videoFile;
 
     public void startRecording() throws IOException, AWTException {
         File file = new File("logs/videos");
@@ -38,8 +39,15 @@ public class VideoRecorder {
         this.screenRecorder.start();
     }
 
+    public File getVideoFile() {
+        return videoFile;
+    }
+
     public void stopRecording() throws IOException {
         this.screenRecorder.stop();
+        if (!screenRecorder.getCreatedMovieFiles().isEmpty()) {
+            videoFile = screenRecorder.getCreatedMovieFiles().get(0);
+        }
     }
 }
 

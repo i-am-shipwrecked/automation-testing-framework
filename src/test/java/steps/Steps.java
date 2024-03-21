@@ -22,6 +22,7 @@ import utils.VideoRecorder;
 import utils.Waiter;
 
 import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -46,7 +47,12 @@ public class Steps {
     public void afterScenario(Scenario scenario) {
         try {
             recorder.stopRecording();
-            if (scenario.isFailed()) {
+            if (!scenario.isFailed()) {
+                File videoFile = recorder.getVideoFile();
+                if (videoFile != null && videoFile.exists()) {
+                    videoFile.delete();
+                }
+            } else {
                 String subject = "Failed Test Report";
                 String body = "Test Scenario: " + scenario.getName() + " has failed.";
                 String recipient = "idontusecocaine@gmail.com";
@@ -62,6 +68,7 @@ public class Steps {
             }
         }
     }
+
 
 
     @Given("User is on the page, which you can insert into sql_injector.properties")
