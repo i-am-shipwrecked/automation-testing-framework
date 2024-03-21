@@ -1,6 +1,7 @@
 runner\Runner.class
 runner\RerunTestRunner.class
 utils\Waiter$1.class
+utils\VideoRecorder.class
 config\LoggerConfigurator.class
 runner\ParallelTestRunner.class
 managers\DriverManager.class
