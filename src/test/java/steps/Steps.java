@@ -1,10 +1,6 @@
 package steps;
 
-import com.codeborne.selenide.Configuration;
 import config.LoggerConfigurator;
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
-import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -12,18 +8,12 @@ import io.cucumber.java.en.When;
 import managers.DriverManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.*;
 import pages.MainPage;
-import utils.EmailSender;
 import utils.PageFactory;
 import utils.VideoRecorder;
 import utils.Waiter;
 
-import java.awt.*;
-import java.io.File;
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
@@ -32,44 +22,7 @@ public class Steps {
     private PageFactory pageFactory = new PageFactory(driver);
     private static final Logger LOGGER = LoggerConfigurator.getLogger();
     private Waiter waiter = Waiter.getInstance();
-    MainPage mainPage = new MainPage(driver);
-    private VideoRecorder recorder;
-
-    @Before
-    public void setup() throws IOException, AWTException {
-        driver = DriverManager.getDriver();
-        Configuration.startMaximized = true;
-        recorder = new VideoRecorder();
-        recorder.startRecording();
-    }
-
-    @After
-    public void afterScenario(Scenario scenario) {
-        try {
-            recorder.stopRecording();
-            if (!scenario.isFailed()) {
-                File videoFile = recorder.getVideoFile();
-                if (videoFile != null && videoFile.exists()) {
-                    videoFile.delete();
-                }
-            } else {
-                String subject = "Failed Test Report";
-                String body = "Test Scenario: " + scenario.getName() + " has failed.";
-                String recipient = "idontusecocaine@gmail.com";
-                EmailSender.sendEmail(recipient, subject, body);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                DriverManager.quitDriver();
-            } catch (Exception e) {
-                System.out.println("Browser did not close properly.");
-            }
-        }
-    }
-
-
+    private MainPage mainPage = new MainPage(driver);
 
     @Given("User is on the page, which you can insert into sql_injector.properties")
     public void userIsOnThePageWhichYouCanInsertIntoSql_injectorProperties() {
