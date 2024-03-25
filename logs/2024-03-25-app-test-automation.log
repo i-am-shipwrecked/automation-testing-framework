@@ -1,0 +1,18 @@
+2024-03-25 13:44:05,179 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-03-25 13:44:07,507 INFO [main] LoggerConfigurator [88] - Test logs
+2024-03-25 13:44:11,979 INFO [main] LoggerConfigurator [88] - Test logs
+2024-03-25 13:44:53,853 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-03-25 13:44:55,620 INFO [main] LoggerConfigurator [87] - Test logs
+2024-03-25 13:44:58,114 INFO [main] LoggerConfigurator [87] - Test logs
+2024-03-25 13:48:30,672 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-03-25 13:48:32,503 INFO [main] LoggerConfigurator [87] - Test logs
+2024-03-25 13:48:36,564 INFO [main] LoggerConfigurator [87] - Test logs
+2024-03-25 13:49:02,386 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-03-25 13:49:04,298 INFO [main] LoggerConfigurator [87] - Test logs
+2024-03-25 13:49:09,134 INFO [main] LoggerConfigurator [87] - Test logs
+2024-03-25 13:49:28,237 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-03-25 13:49:29,938 INFO [main] LoggerConfigurator [87] - Test logs
+2024-03-25 13:49:33,536 INFO [main] LoggerConfigurator [87] - Test logs
+2024-03-25 13:50:01,440 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-03-25 13:50:05,469 INFO [main] LoggerConfigurator [87] - Test logs
+2024-03-25 13:50:10,992 INFO [main] LoggerConfigurator [87] - Test logs
