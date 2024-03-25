@@ -1,4 +1,6 @@
-package steps;;
+package steps;
+
+;
 
 import com.codeborne.selenide.Configuration;
 import config.LoggerConfigurator;
