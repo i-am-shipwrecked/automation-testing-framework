@@ -6,13 +6,32 @@ import org.monte.screenrecorder.ScreenRecorder;
 
 import java.awt.*;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Properties;
+
 import static org.monte.media.FormatKeys.*;
 import static org.monte.media.VideoFormatKeys.*;
 
 public class VideoRecorder {
+    private boolean enableRecording;
     private ScreenRecorder screenRecorder;
     private File videoFile;
+
+    public VideoRecorder() {
+        loadProperties();
+    }
+
+    private void loadProperties() {
+        Properties properties = new Properties();
+        try (FileInputStream fis = new FileInputStream("src/test/resources/test.properties")) {
+            properties.load(fis);
+            enableRecording = Boolean.parseBoolean(properties.getProperty("enable_video_recording", "true"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            enableRecording = true;
+        }
+    }
 
     public void startRecording() throws IOException, AWTException {
         File file = new File("logs/videos");
@@ -49,6 +68,11 @@ public class VideoRecorder {
             videoFile = screenRecorder.getCreatedMovieFiles().get(0);
         }
     }
+
+    public boolean isRecordingEnabled() {
+        return enableRecording;
+    }
+
 }
 
 

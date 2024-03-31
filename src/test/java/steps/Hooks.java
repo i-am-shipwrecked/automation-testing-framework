@@ -27,7 +27,9 @@ public class Hooks {
         driver = DriverManager.getDriver();
         Configuration.startMaximized = true;
         recorder = new VideoRecorder();
-        recorder.startRecording();
+        if (recorder.isRecordingEnabled()) {
+            recorder.startRecording();
+        }
     }
 
     @After
