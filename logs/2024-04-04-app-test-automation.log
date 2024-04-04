@@ -1,0 +1,13 @@
+2024-04-04 13:36:22,541 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-04-04 13:36:24,441 INFO [main] LoggerConfigurator [41] - Test logs
+2024-04-04 13:36:27,634 INFO [main] LoggerConfigurator [41] - Test logs
+2024-04-04 15:57:56,851 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-04-04 15:57:58,551 INFO [main] LoggerConfigurator [41] - Test logs
+2024-04-04 15:58:01,655 INFO [main] LoggerConfigurator [41] - Test logs
+2024-04-04 16:00:58,383 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-04-04 16:01:00,132 INFO [main] LoggerConfigurator [41] - Test logs
+2024-04-04 16:01:03,620 INFO [main] LoggerConfigurator [41] - Test logs
+2024-04-04 20:47:36,778 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-04-04 20:47:38,848 INFO [main] LoggerConfigurator [41] - Test logs
+2024-04-04 20:47:42,062 INFO [main] LoggerConfigurator [41] - Test logs
+2024-04-04 20:47:47,700 INFO [main] LoggerConfigurator [41] - Test logs
