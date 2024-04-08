@@ -1,4 +1,4 @@
-package steps;
+package steps.ui;
 
 import config.LoggerConfigurator;
 import io.cucumber.java.en.And;
