@@ -1,4 +1,4 @@
-package steps;
+package steps.api;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
