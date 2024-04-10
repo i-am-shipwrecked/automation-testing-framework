@@ -1,1 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="User Controller tests" skipped="0" tests="1" time="2.58" timestamp="2024-04-08 03:05:55"><testcase name="Registering a new user via API endpoint"/></testsuite>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="User Controller tests" skipped="0" tests="1" time="2.7" timestamp="2024-04-10 03:31:34"><testcase name="Registering a new user via API endpoint"/></testsuite>
