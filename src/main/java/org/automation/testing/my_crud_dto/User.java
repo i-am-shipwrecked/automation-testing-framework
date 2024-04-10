@@ -4,14 +4,20 @@ import io.cucumber.core.internal.com.fasterxml.jackson.annotation.JsonCreator;
 import io.cucumber.core.internal.com.fasterxml.jackson.annotation.JsonIgnore;
 import io.cucumber.core.internal.com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.cucumber.core.internal.com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-@NoArgsConstructor // Добавляем эту аннотацию для автоматического создания конструктора по умолчанию
+@NoArgsConstructor
 public class User {
     @JsonIgnore
     private String userId;
+    @Setter
+    @Getter
     private String username;
+    @Setter
+    @Getter
     private String password;
 
 
@@ -21,20 +27,6 @@ public class User {
         this.username = username;
         this.password = password;
     }
-    public String getUsername() {
-        return username;
-    }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 }
 

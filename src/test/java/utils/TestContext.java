@@ -1,9 +1,13 @@
 package utils;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.automation.testing.my_crud_dto.User;
 
 import java.util.UUID;
 
+@Setter
+@Getter
 public class TestContext {
     private static TestContext instance;
     private UUID userId;
@@ -19,17 +23,4 @@ public class TestContext {
         return instance;
     }
 
-    public UUID getUserId() {
-        return userId;
-    }
-
-    public void setUserId(UUID userId) {
-        this.userId = userId;
-    }
-    public User getUserData() {
-        return userData;
-    }
-    public void setUserData(User userData) {
-        this.userData = userData;
-    }
 }
