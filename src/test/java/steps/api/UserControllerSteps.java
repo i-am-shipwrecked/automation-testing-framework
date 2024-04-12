@@ -9,6 +9,7 @@ import io.restassured.response.Response;
 import org.automation.testing.my_crud_dto.User;
 import utils.TestContext;
 
+import java.util.UUID;
 
 import static io.restassured.RestAssured.given;
 
@@ -35,7 +36,6 @@ public class UserControllerSteps {
                 .post("/users/api/register");
     }
 
-
     @Then("the User receives an HTTP response with status code {int}")
     public void theUserReceivesAnHTTPResponseWithStatusCode(int statusCode) {
         response.then()
@@ -44,16 +44,31 @@ public class UserControllerSteps {
 
     @And("the User sends the GET response to this user")
     public void theUserSendsTheGETResponseToThisUser() {
-        User userData = testContext.getUserData();
+        String userId = response.getBody().asString().replaceAll("\"", "").trim();
+        System.out.println(userId + " userId пользователя");
+        UUID uuid;
+        try {
+            uuid = UUID.fromString(userId);
+        } catch (IllegalArgumentException e) {
+            System.err.println("Invalid UUID string: " + userId);
+        }
+
+        System.out.println(userId + " UUID пользователя");
+        System.out.println("URL: " + URL + "/users/api/user/" + userId);
+
+
 
         response = given()
-                .queryParam("username", userData.getUsername())
-                .queryParam("password", userData.getPassword())
+                .pathParam("userId", userId)
                 .when()
-                .get("/users/api/user/profile");
+                .get("/users/api/user/{userId}");
 
         response.then()
                 .statusCode(200);
-        System.out.println(response.getBody().asString());
+        String responseBody = response.getBody().asString();
+        System.out.println(responseBody);
     }
+
+
+
 }
