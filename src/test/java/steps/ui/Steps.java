@@ -11,7 +11,6 @@ import org.junit.Assert;
 import org.openqa.selenium.*;
 import pages.MainPage;
 import utils.PageFactory;
-import utils.VideoRecorder;
 import utils.Waiter;
 
 import java.io.InputStream;

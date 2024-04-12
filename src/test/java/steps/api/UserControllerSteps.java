@@ -57,7 +57,6 @@ public class UserControllerSteps {
         System.out.println("URL: " + URL + "/users/api/user/" + userId);
 
 
-
         response = given()
                 .pathParam("userId", userId)
                 .when()
@@ -68,7 +67,5 @@ public class UserControllerSteps {
         String responseBody = response.getBody().asString();
         System.out.println(responseBody);
     }
-
-
 
 }

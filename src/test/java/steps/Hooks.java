@@ -22,7 +22,7 @@ public class Hooks {
     private static final Logger LOGGER = LoggerConfigurator.getLogger();
     private VideoRecorder recorder;
 
-    @Before
+    @Before("@ui")
     public void setup() throws IOException, AWTException {
         driver = DriverManager.getDriver();
         Configuration.startMaximized = true;
@@ -32,7 +32,7 @@ public class Hooks {
         }
     }
 
-    @After
+    @After("ui")
     public void afterScenario(Scenario scenario) {
         try {
             recorder.stopRecording();
