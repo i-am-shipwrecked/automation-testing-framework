@@ -8,6 +8,7 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.automation.testing.my_crud_dto.User;
 import utils.TestContext;
+import utils.TestDataGenerator;
 
 import java.util.UUID;
 
@@ -17,6 +18,7 @@ public class UserControllerSteps {
     private static final String URL = "http://localhost:8080";
     private Response response;
     private TestContext testContext = TestContext.getInstance();
+    private TestDataGenerator testDataGenerator = new TestDataGenerator();
 
     @Given("the User sends an API request")
     public void theUserSendsAnAPIRequest() {
@@ -25,7 +27,7 @@ public class UserControllerSteps {
 
     @When("the User sends an API request with JSON data")
     public void theUserSendsAnAPIRequestWithJSONData() {
-        User userData = new User("user2", "pass2");
+        User userData = new User(testDataGenerator.generateTestData(6), testDataGenerator.generateTestData(6));
 
         testContext.setUserData(userData);
 
