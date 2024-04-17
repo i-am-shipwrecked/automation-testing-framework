@@ -49,8 +49,10 @@ public class UserControllerSteps {
         String userId = response.getBody().asString().replaceAll("\"", "").trim();
         System.out.println(userId + " userId пользователя");
         UUID uuid;
+
         try {
             uuid = UUID.fromString(userId);
+            testContext.setUserId(UUID.fromString(userId));
         } catch (IllegalArgumentException e) {
             System.err.println("Invalid UUID string: " + userId);
         }
