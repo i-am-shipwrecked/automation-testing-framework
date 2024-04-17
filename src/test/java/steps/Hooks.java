@@ -7,22 +7,27 @@ import config.LoggerConfigurator;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
 import managers.DriverManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import utils.EmailSender;
+import utils.TestContext;
 import utils.VideoRecorder;
 
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.UUID;
 
 public class Hooks {
     private WebDriver driver = DriverManager.getDriver();
     private static final Logger LOGGER = LoggerConfigurator.getLogger();
     private VideoRecorder recorder;
+    private TestContext testContext = TestContext.getInstance();
 
-    @Before
+    @Before("@ui")
     public void setup() throws IOException, AWTException {
         driver = DriverManager.getDriver();
         Configuration.startMaximized = true;
@@ -32,7 +37,7 @@ public class Hooks {
         }
     }
 
-    @After
+    @After("@ui")
     public void afterScenario(Scenario scenario) {
         try {
             recorder.stopRecording();
