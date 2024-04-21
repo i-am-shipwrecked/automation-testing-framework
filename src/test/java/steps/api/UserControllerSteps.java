@@ -13,6 +13,7 @@ import utils.TestDataGenerator;
 import java.util.UUID;
 
 import static io.restassured.RestAssured.given;
+import static org.junit.Assert.assertTrue;
 
 public class UserControllerSteps {
     private static final String URL = "http://localhost:8080";
@@ -72,4 +73,48 @@ public class UserControllerSteps {
         System.out.println(responseBody);
     }
 
+    @When("the User sends an API request with JSON data containing the updated username")
+    public void theUserSendsAnAPIRequestWithJSONDataContainingTheUpdatedUsername() {
+        User updatedUserData = new User(testDataGenerator.generateTestData(6), testDataGenerator.generateTestData(6));
+        System.out.println(updatedUserData);
+
+        response = given()
+                .contentType("application/json")
+                .body(updatedUserData)
+                .when()
+                .post("/users/api/register");
+
+        String userId = response.getBody().asString().replaceAll("\"", "").trim();
+        testContext.setUserId(UUID.fromString(userId));
+        testContext.setUserData(updatedUserData);
+        UUID uuid;
+
+        try {
+            uuid = UUID.fromString(userId);
+            testContext.setUserId(UUID.fromString(userId));
+        } catch (IllegalArgumentException e) {
+            System.err.println("Invalid UUID string: " + userId);
+        }
+
+        response = given()
+                .contentType("application/json")
+                .body(updatedUserData)
+                .when()
+                .put("/users/api/user/" + userId + "/profile");
+    }
+
+    @And("the User verifies that the user's username is updated by sending a GET request for this user")
+    public void theUserVerifiesThatTheUserSUsernameIsUpdatedBySendingAGETRequestForThisUser() {
+        UUID userId = testContext.getUserId();
+
+        response = given()
+                .pathParam("id", userId)
+                .when()
+                .get("/users/api/user/{id}");
+
+        response.then().statusCode(200);
+
+        String responseBody = response.getBody().asString();
+        assertTrue(responseBody.contains(testContext.getUserData().getUsername()));
+    }
 }
