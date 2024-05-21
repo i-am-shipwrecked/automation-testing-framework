@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="1" failures="0" name="Task Controller Controller tests" skipped="0" tests="1" time="0.38" timestamp="2024-05-21 04:53:49"><testcase name="Successfully creating a new task"><error message="Cannot invoke &quot;io.restassured.response.Response.then()&quot; because &quot;this.response&quot; is null" type="java.lang.NullPointerException">Cannot invoke "io.restassured.response.Response.then()" because "this.response" is null</error><system-err>Cannot invoke "io.restassured.response.Response.then()" because "this.response" is null&#13;
+steps.api.UserControllerSteps.theUserReceivesAnHTTPResponseWithStatusCode(UserControllerSteps.java:44)&#13;
+✽.the User receives an HTTP response with status code 200(file:///D:/Desktop/my_atf/automation-testing-framework/src/test/resources/features/api/TaskContoller.feature:14)&#13;
+</system-err></testcase></testsuite>

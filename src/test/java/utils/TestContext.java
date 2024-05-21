@@ -1,5 +1,6 @@
 package utils;
 
+import io.restassured.response.Response;
 import lombok.Getter;
 import lombok.Setter;
 import org.automation.testing.my_crud_dto.User;
@@ -12,6 +13,7 @@ public class TestContext {
     private static TestContext instance;
     private UUID userId;
     private User userData;
+    private Response response;
 
     private TestContext() {
     }
