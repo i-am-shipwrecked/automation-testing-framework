@@ -28,7 +28,7 @@ public class UserControllerSteps {
 
     @When("the User sends an API request with JSON data")
     public void theUserSendsAnAPIRequestWithJSONData() {
-        User userData = new User(testDataGenerator.generateTestData(6), testDataGenerator.generateTestData(6));
+        User userData = new User(testDataGenerator.generateUser(6), testDataGenerator.generateUser(6));
 
         testContext.setUserData(userData);
 
@@ -41,6 +41,7 @@ public class UserControllerSteps {
 
     @Then("the User receives an HTTP response with status code {int}")
     public void theUserReceivesAnHTTPResponseWithStatusCode(int statusCode) {
+        Response response = TestContext.getInstance().getResponse();
         response.then()
                 .statusCode(statusCode);
     }
@@ -75,7 +76,7 @@ public class UserControllerSteps {
 
     @When("the User sends an API request with JSON data containing the updated username")
     public void theUserSendsAnAPIRequestWithJSONDataContainingTheUpdatedUsername() {
-        User updatedUserData = new User(testDataGenerator.generateTestData(6), testDataGenerator.generateTestData(6));
+        User updatedUserData = new User(testDataGenerator.generateUser(6), testDataGenerator.generateUser(6));
         System.out.println(updatedUserData);
 
         response = given()
@@ -117,4 +118,5 @@ public class UserControllerSteps {
         String responseBody = response.getBody().asString();
         assertTrue(responseBody.contains(testContext.getUserData().getUsername()));
     }
+
 }

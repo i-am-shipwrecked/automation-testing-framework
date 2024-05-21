@@ -1,6 +1,6 @@
 Feature: User Controller tests
 
-  @apii @users
+  @api @users
   Scenario: Registering a new user via API endpoint
     Given the User sends an API request
     When the User sends an API request with JSON data
