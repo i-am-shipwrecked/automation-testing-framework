@@ -16,6 +16,9 @@ public class TestContext {
     private User userData;
     private UUID projectId;
     private Response response;
+    private String username;
+    private String password;
+    private String newPassword;
 
     private TestContext() {
     }
