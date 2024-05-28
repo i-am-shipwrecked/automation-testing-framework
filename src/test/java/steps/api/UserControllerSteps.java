@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.RestAssured;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.automation.testing.my_crud_dto.User;
 import utils.TestContext;
@@ -32,12 +33,29 @@ public class UserControllerSteps {
 
         testContext.setUserData(userData);
 
-        response = given()
+        Response response = given()
                 .contentType("application/json")
                 .body(userData)
                 .when()
                 .post("/users/api/register");
+
+        response.then().log().all();
+
+        String responseString = response.asString();
+
+        if (responseString != null && !responseString.isEmpty() && responseString.startsWith("\"") && responseString.endsWith("\"")) {
+            String userIdString = responseString.substring(1, responseString.length() - 1);
+            UUID userId = UUID.fromString(userIdString);
+            testContext.setUserId(userId);
+        } else {
+            throw new IllegalStateException("Invalid response for user ID");
+        }
+
+        testContext.setUsername(userData.getUsername());
+        testContext.setPassword(userData.getPassword());
+        testContext.setResponse(response);
     }
+
 
     @Then("the User receives an HTTP response with status code {int}")
     public void theUserReceivesAnHTTPResponseWithStatusCode(int statusCode) {
@@ -119,4 +137,36 @@ public class UserControllerSteps {
         assertTrue(responseBody.contains(testContext.getUserData().getUsername()));
     }
 
+    @When("the User sends an API request with JSON data containing the updated password")
+    public void theUserSendsAnAPIRequestWithJSONDataContainingTheUpdatedPassword() {
+        UUID userId = testContext.getUserId();
+        String newPassword = testDataGenerator.generateUser(5);
+
+        Response response = given()
+                .contentType("application/json")
+                .body("\"" + newPassword + "\"")
+                .when()
+                .put(URL + "/users/api/user/password/" + userId);
+
+        response.then().log().all();
+
+        testContext.setResponse(response);
+    }
+
+    @And("the User verifies that the user's password is updated by sending a GET request for this user")
+    public void theUserVerifiesThatTheUserSPasswordIsUpdatedBySendingAGETRequestForThisUser() {
+        String username = testContext.getUsername();
+        String newPassword = "newSecurePassword123";
+
+        Response response = given()
+                .contentType("application/json")
+                .queryParam("username", username)
+                .queryParam("password", newPassword)
+                .when()
+                .get(URL + "/users/api/user/profile");
+
+        response.then().log().all();
+
+        testContext.setResponse(response);
+    }
 }
