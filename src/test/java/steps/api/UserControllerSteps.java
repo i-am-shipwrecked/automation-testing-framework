@@ -27,7 +27,7 @@ public class UserControllerSteps {
         RestAssured.baseURI = URL;
     }
 
-    @When("the User sends an API request with JSON data")
+    @When("the user sends an API request with JSON data to register a new user")
     public void theUserSendsAnAPIRequestWithJSONData() {
         User userData = new User(testDataGenerator.generateUser(6), testDataGenerator.generateUser(6));
 
@@ -62,24 +62,30 @@ public class UserControllerSteps {
         Response response = TestContext.getInstance().getResponse();
         response.then()
                 .statusCode(statusCode);
+
+        response.then().statusCode(statusCode);
     }
 
     @And("the User sends the GET response to this user")
     public void theUserSendsTheGETResponseToThisUser() {
-        String userId = response.getBody().asString().replaceAll("\"", "").trim();
-        System.out.println(userId + " userId пользователя");
-        UUID uuid;
+        Response response = testContext.getResponse();
+        if (response == null) {
+            throw new IllegalStateException("Response is not initialized. Make sure the previous steps correctly set the response.");
+        }
 
+        String userId = response.getBody().asString().replaceAll("\"", "").trim();
+
+        UUID uuid;
         try {
             uuid = UUID.fromString(userId);
-            testContext.setUserId(UUID.fromString(userId));
+            testContext.setUserId(uuid);
         } catch (IllegalArgumentException e) {
             System.err.println("Invalid UUID string: " + userId);
+            return;
         }
 
         System.out.println(userId + " UUID пользователя");
         System.out.println("URL: " + URL + "/users/api/user/" + userId);
-
 
         response = given()
                 .pathParam("userId", userId)
@@ -88,6 +94,7 @@ public class UserControllerSteps {
 
         response.then()
                 .statusCode(200);
+
         String responseBody = response.getBody().asString();
         System.out.println(responseBody);
     }
@@ -164,6 +171,19 @@ public class UserControllerSteps {
                 .queryParam("password", newPassword)
                 .when()
                 .get(URL + "/users/api/user/profile");
+
+        response.then().log().all();
+
+        testContext.setResponse(response);
+    }
+
+    @And("the user sends DELETE response by ID")
+    public void theUserSendsDELETEResponseByID() {
+        UUID userId = testContext.getUserId();
+
+        Response response = given()
+                .when()
+                .delete(URL + "/users/api/user/" + userId);
 
         response.then().log().all();
 
