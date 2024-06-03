@@ -26,7 +26,7 @@ Feature: User Controller tests
     And the User verifies that the user's password is updated by sending a GET request for this user
     Then the User receives an HTTP response with status code 200
 
-  @api @users
+  @api
   Scenario: Deleting a user by ID
     Given the User sends an API request
     When the user sends an API request with JSON data to register a new user
