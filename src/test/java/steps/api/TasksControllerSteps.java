@@ -18,7 +18,7 @@ public class TasksControllerSteps {
     private UUID projectId;
     @When("the User sends a POST request with valid JSON")
     public void theUserSendsAPOSTRequestWithValidJSON() {
-        Task newTask = testDataGenerator.generateNewTask(projectId); // Создаем новую задачу
+        Task newTask = testDataGenerator.generateNewTask(projectId);
         Response response = given()
                 .contentType("application/json")
                 .body(newTask)

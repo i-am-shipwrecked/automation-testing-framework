@@ -21,5 +21,5 @@ import org.junit.runner.RunWith;
         },
         objectFactory = PicoFactory.class
 )
-public class Runner {
+public class UITestsRunner {
 }
