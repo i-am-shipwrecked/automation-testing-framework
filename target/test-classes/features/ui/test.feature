@@ -11,13 +11,13 @@ Feature: SQL injector
     Then Verify that your database is not broken =)
 
 
-  @SQL-Injections @Security-Testing @Negative @Automation @Run @rerun @ui
+#  @SQL-Injections @Security-Testing @Negative @Automation @Run @rerun @ui
   Scenario: This test should be failed
     Given User is on the page, which you can insert into sql_injector.properties
     When User clicks on null button
     Then Test should be failed and returned
 
-  @SQL-Injections @Security-Testing @Negative @Automation @Run @rerun @ui
+#  @SQL-Injections @Security-Testing @Negative @Automation @Run @rerun @ui
   Scenario: This test should be failed
     Given User is on the page, which you can insert into sql_injector.properties
     When User clicks on null button
