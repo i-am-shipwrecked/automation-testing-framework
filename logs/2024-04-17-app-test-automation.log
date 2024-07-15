@@ -1,0 +1,25 @@
+2024-04-17 14:34:50,003 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-04-17 14:34:51,442 INFO [main] LoggerConfigurator [82] - Deleting user after scenario execution
+2024-04-17 14:34:51,442 WARN [main] LoggerConfigurator [88] - No user ID provided for deletion
+2024-04-17 14:35:50,045 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-04-17 14:40:43,354 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-04-17 14:41:22,427 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-04-17 14:45:29,041 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-04-17 14:46:27,938 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-04-17 14:48:55,467 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-04-17 14:49:52,176 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-04-17 14:52:39,678 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-04-17 14:56:47,155 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-04-17 14:57:42,443 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-04-17 15:00:59,451 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-04-17 15:02:42,047 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-04-17 15:06:47,759 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-04-17 15:10:05,485 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-04-17 15:11:16,524 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-04-17 15:14:32,599 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-04-17 15:14:58,208 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-04-17 15:18:29,805 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-04-17 15:20:24,588 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-04-17 15:20:38,153 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-04-17 15:21:49,389 INFO [main] LoggerConfigurator [21] - Log4j is configured.
+2024-04-17 15:24:01,846 INFO [main] LoggerConfigurator [21] - Log4j is configured.
