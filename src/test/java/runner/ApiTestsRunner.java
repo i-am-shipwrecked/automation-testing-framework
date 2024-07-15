@@ -9,8 +9,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         publish = true,
         stepNotifications = true,
-        tags = "@Api",
-        features = "src/test/resources/features",
+        tags = "@projects",
+        features = "src/test/resources/features/api",
         glue = "steps",
         plugin = {
                 "pretty",
