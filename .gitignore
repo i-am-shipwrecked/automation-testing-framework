@@ -1,9 +1,11 @@
 .idea/
+.mvn/
 *.iws
 *.log
 *.iml
 log/
 logs/
+/logs/
 /target/
 *.bak
 test-output/
